@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
     public float MovementSpeed =9;
+    public float RunningSpeed = 12;
     public float Gravity = 9.8f;
     private float velocity = 0;
 
@@ -37,48 +38,26 @@ public class PlayerController : MonoBehaviour
             velocity -= Gravity * Time.deltaTime;
             characterController.Move(new Vector3(0, velocity, 0));
         }
+       //Relodes scene 
+       //Note replace Load scene 0 with the one thing that makes it relod the current scene
+       //comment out for full release
         if(Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(0);
         }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            MovementSpeed = RunningSpeed;
+        }
+        else
+        {
+            MovementSpeed = 9;
+        }
     }
-    private void OnTriggerEnter(Collider collision) 
+   /* private void OnTriggerEnter(Collider collision) 
     {
-        if (collision.gameObject.tag == "OutsideTrigger")
-        {
-            isFading = true;
-            //_Fade.SetBool("IsFading", isFading);
-             SceneManager.LoadScene(5);   
-        }
-        if (collision.gameObject.tag == "InsideTrigger")
-        {
-            isFading = true;
-            //_Fade.SetBool("IsFading", isFading);
-             SceneManager.LoadScene(7);   
-        }
-        if (collision.gameObject.tag == "EM")
-        {
-            isFading = true;
-            //_Fade.SetBool("IsFading", isFading);
-             SceneManager.LoadScene(4);   
-        }
-        if (collision.gameObject.tag == "Clue1")
-        {
-             SceneManager.LoadScene(8);   
-        }
-        if (collision.gameObject.tag == "Clue2")
-        {
-             SceneManager.LoadScene(10);   
-        }
-        if (collision.gameObject.tag == "Clue3")
-        {
-             SceneManager.LoadScene(12);   
-        }
-        if (collision.gameObject.tag == "PacisBac")
-        {
-             SceneManager.LoadScene(13);   
-        }
+       
         
-    }
+    }  */
 
 }
