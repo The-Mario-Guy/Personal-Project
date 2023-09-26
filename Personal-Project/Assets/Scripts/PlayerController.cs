@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
-    public float MovementSpeed =9;
-    public float RunningSpeed = 12;
+    public float MovementSpeed =5;
+    public float RunningSpeed = 7;
     public float Gravity = 9.8f;
     private float velocity = 0;
 
@@ -39,11 +39,10 @@ public class PlayerController : MonoBehaviour
             characterController.Move(new Vector3(0, velocity, 0));
         }
        //Relodes scene 
-       //Note replace Load scene 0 with the one thing that makes it relod the current scene
        //comment out for full release
         if(Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -51,7 +50,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            MovementSpeed = 9;
+            MovementSpeed = 5;
         }
     }
    /* private void OnTriggerEnter(Collider collision) 
