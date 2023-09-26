@@ -1069,14 +1069,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TextureWarpingFactor: 0
+  _TextureWarpingFactor: 0.01
   _TextureWarpingMode: 0
   _VertexGridResolution: 15
   _VertexWobbleMode: 0
   _UseRetroVertexLighting: 0
   _RetroLightingNormalFactor: 0
   _RetroLightFalloffStart: 0
-  _FlatShadingMode: 0
+  _FlatShadingMode: 1
   _TriangleSortMode: 0
   _DepthDebugView: 0
 --- !u!1 &305427274
@@ -2550,6 +2550,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2638,7 +2639,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 433faa8b758afed4f9295b193c697276, type: 3}
   m_Name: 
@@ -2654,6 +2655,18 @@ MonoBehaviour:
   _PostProcessShaderAccurate: {fileID: 4800000, guid: 2ebed186567d3c244a87538744a62920, type: 3}
   _PixelationShader: {fileID: 4800000, guid: f2da0e2a14a532548b5db043244b3df1, type: 3}
   _InterlacingShader: {fileID: 4800000, guid: 03ebd34214b41ef459d7ee6753b062be, type: 3}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab29c4d30e4310e4cb09e7cb5dbe427f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &984526345
 GameObject:
   m_ObjectHideFlags: 0
