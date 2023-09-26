@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 06a2cb916dc5fc842b878de88d9d2993, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465533, g: 0.49638712, b: 0.574804, a: 1}
+  m_IndirectSpecularColor: {r: 0.43314952, g: 0.47897243, b: 0.5381192, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3287,9 +3287,7 @@ Transform:
   m_LocalPosition: {x: 158.52919, y: 17.664831, z: -63.661423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1362785397}
-  - {fileID: 1356018376}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000083533
@@ -4308,7 +4306,7 @@ Transform:
   m_GameObject: {fileID: 1356018375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -17.489182, y: -12.67857, z: -0.28957748}
+  m_LocalPosition: {x: 141.04001, y: 4.9862614, z: -63.951}
   m_LocalScale: {x: 4.600741, y: 9.802574, z: 1.7778}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4318,7 +4316,7 @@ Transform:
   - {fileID: 1967596755}
   - {fileID: 107699379}
   - {fileID: 1706303901}
-  m_Father: {fileID: 975506402}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1356018377
 BoxCollider:
@@ -4520,15 +4518,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362785396}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 158.52919, y: 17.664831, z: -63.661423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 848498101}
   - {fileID: 1453167002}
   - {fileID: 1388151561}
-  m_Father: {fileID: 975506402}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1371646856
 GameObject:
@@ -8133,7 +8131,9 @@ SceneRoots:
   - {fileID: 507721605}
   - {fileID: 888331138}
   - {fileID: 1554289459}
-  - {fileID: 975506402}
+  - {fileID: 1362785397}
+  - {fileID: 1356018376}
   - {fileID: 1796510007}
   - {fileID: 1134193818}
   - {fileID: 825371823}
+  - {fileID: 975506402}
