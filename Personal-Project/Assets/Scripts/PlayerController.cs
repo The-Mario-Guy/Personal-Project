@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     CharacterController characterController;
-    public float MovementSpeed =5;
-    public float RunningSpeed = 7;
+    public float MovementSpeed =3;
+    public float RunningSpeed = 5;
     public float Gravity = 9.8f;
     private float velocity = 0;
 
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            MovementSpeed = 5;
+            MovementSpeed = 3;
         }
     }
    /* private void OnTriggerEnter(Collider collision) 
