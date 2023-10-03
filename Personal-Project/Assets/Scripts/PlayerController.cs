@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
             isRunning();
             updateStaminaBar(-2);
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        else
         {
             stopRunning();
             
