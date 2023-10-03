@@ -12,20 +12,24 @@ public class PlayerController : MonoBehaviour
     private float velocity = 0;
     private float _totalStamina = 100;
     public bool _isRunning = false;
+    public float currentStamina;
+    public bool _inTrigger = false;
+    public GameObject defaultCursor;
+    public GameObject interactCursor;
+    public GameObject grabCursor;
+
 
     private Camera cam;
-    public bool isFading;
-    private Animator _Fade;
     [SerializeField] private Slider _stamina;
  
     private void Start()
     {
         cam = Camera.main;
         characterController = GetComponent<CharacterController>();
-        _Fade = GetComponent<Animator>();
         _stamina = GameObject.Find("Stamina Bar").GetComponent<Slider>();
+        normalCursor();
     }
- 
+
     void Update()
     {
         // player movement - forward, backward, left, right
@@ -34,7 +38,7 @@ public class PlayerController : MonoBehaviour
         characterController.Move((cam.transform.right * horizontal + cam.transform.forward * vertical) * Time.deltaTime);
         _stamina.value = _totalStamina;
         // Gravity
-        if(characterController.isGrounded)
+        if (characterController.isGrounded)
         {
             velocity = 0;
         }
@@ -43,30 +47,34 @@ public class PlayerController : MonoBehaviour
             velocity -= Gravity * Time.deltaTime;
             characterController.Move(new Vector3(0, velocity, 0));
         }
-       //Relodes scene 
-       //comment out for full release
-        if(Input.GetKey(KeyCode.R))
+        //Relodes scene 
+        //comment out for full release
+        if (Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-       
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             isRunning();
-            updateStaminaBar(-2);
+            
+            updateStaminaBar(-1);
+
         }
         else
         {
             stopRunning();
-            
+            //Fix the (+1) as it seems to keep adding even after the bar is full
+            updateStaminaBar(+1);
         }
         StaminaRegenRoutine();
+
     }
 
     private void isRunning()
     {
        _isRunning = true;
-        MovementSpeed = RunningSpeed;
+        MovementSpeed = 5;
     }
     private void stopRunning()
     {
@@ -87,6 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         while(_isRunning == true)
         {
+
             updateStaminaBar(-20);
             yield return new WaitForSeconds(1.0f);
         }
@@ -94,10 +103,41 @@ public class PlayerController : MonoBehaviour
     //Increases Stamina Bar
     IEnumerator StaminaRegenRoutine()
     {
-        while (_isRunning == false) 
+        while (_isRunning == false)
         {
+
             updateStaminaBar(+20);
             yield return new WaitForSeconds(1.0f);
         }
     }
+
+   //This should be put in seperate scripts for each interactable thing, not built into the player controller, we don't want to be Yandre Dev 2 :<
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Scott")
+        {
+            Interactable();
+            _inTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        _inTrigger = false;
+        normalCursor();
+    }
+    
+    private void Interactable()
+    {
+        Debug.Log("You have entered the trigger for Scott");
+        defaultCursor.gameObject.SetActive(false);
+        interactCursor.gameObject.SetActive(true);
+    }
+    private void normalCursor()
+    {
+
+        defaultCursor.gameObject.SetActive(true);
+        interactCursor.gameObject.SetActive(false);
+        grabCursor.gameObject.SetActive(false);
+    } 
 }

@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 183909249}
   m_Layer: 5
   m_Name: Interact
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TextureWarpingFactor: 0.05
+  _TextureWarpingFactor: 0
   _TextureWarpingMode: 0
   _VertexGridResolution: 50
   _VertexWobbleMode: 1
@@ -3011,6 +3011,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 22, y: 49.679363, z: 27.453827}
   m_Center: {x: -3.9364382e-15, y: 21.190815, z: 0.39557493}
+--- !u!1 &356191793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356191794}
+  - component: {fileID: 356191796}
+  - component: {fileID: 356191795}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Scott
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &356191794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356191793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3673, y: 1, z: 250.96747}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2011852014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &356191795
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356191793}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.6943758
+  m_Center: {x: -0.08, y: 0, z: -0.0000000017440263}
+--- !u!33 &356191796
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356191793}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &372369420
 GameObject:
   m_ObjectHideFlags: 0
@@ -8840,7 +8902,7 @@ GameObject:
   - component: {fileID: 1353107287}
   m_Layer: 5
   m_Name: Grab
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10476,7 +10538,7 @@ GameObject:
   - component: {fileID: 1494843673}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10586,7 +10648,11 @@ MonoBehaviour:
   RunningSpeed: 5
   Gravity: 9.8
   _isRunning: 0
-  isFading: 0
+  currentStamina: 0
+  _inTrigger: 0
+  defaultCursor: {fileID: 1979721165}
+  interactCursor: {fileID: 183909247}
+  grabCursor: {fileID: 1353107285}
   _stamina: {fileID: 1852100370}
 --- !u!143 &1494843672
 CharacterController:
@@ -14916,7 +14982,8 @@ Transform:
   m_LocalPosition: {x: 11.75, y: 3.506219, z: 12.07}
   m_LocalScale: {x: 2.5816927, y: -3.6238105, z: -0.014191483}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 356191794}
   m_Father: {fileID: 372369421}
   m_LocalEulerAnglesHint: {x: 0, y: 84.352, z: 0}
 --- !u!114 &2011852015
