@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TextureWarpingFactor: 0
+  _TextureWarpingFactor: 0.05
   _TextureWarpingMode: 0
   _VertexGridResolution: 50
   _VertexWobbleMode: 1
@@ -10585,6 +10585,7 @@ MonoBehaviour:
   MovementSpeed: 3
   RunningSpeed: 5
   Gravity: 9.8
+  _isRunning: 0
   isFading: 0
   _stamina: {fileID: 1852100370}
 --- !u!143 &1494843672
