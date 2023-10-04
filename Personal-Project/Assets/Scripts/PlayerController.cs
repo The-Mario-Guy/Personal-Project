@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public GameObject defaultCursor;
     public GameObject interactCursor;
     public GameObject grabCursor;
+    static public bool dialouge = false;
 
 
     private Camera cam;
